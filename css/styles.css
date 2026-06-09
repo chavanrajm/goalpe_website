@@ -53,9 +53,9 @@
   --gp-disabled-bg: #747474;
   --gp-disabled-text: #131312;
   --gp-cursor: #f2f99f;
-  --gp-btn-bg: #003400;
-  --gp-btn-border: #005800;
-  --gp-btn-text: #59ff59;
+  --gp-btn-bg: #e4f23c;
+  --gp-btn-border: transparent;
+  --gp-btn-text: #000000;
   --gp-input-radius: 10px;
   --gp-input-height: 44px;
   --gp-input-padding-x: 16px;
@@ -344,7 +344,7 @@ body {
   line-height: 1.5;
   color: var(--gp-btn-text);
   background-color: var(--gp-btn-bg);
-  border: 1px solid var(--gp-btn-border);
+  border: none;
   border-radius: var(--gp-button-radius);
   cursor: pointer;
   transition: opacity var(--gp-transition), background-color var(--gp-transition);
@@ -360,7 +360,7 @@ body {
 
 .submit-btn:disabled {
   background-color: var(--gp-disabled-bg);
-  border-color: var(--gp-disabled-bg);
+  border: none;
   color: var(--gp-disabled-text);
   cursor: not-allowed;
 }
@@ -374,7 +374,7 @@ body {
   position: absolute;
   width: 24px;
   height: 24px;
-  border: 2px solid var(--gp-btn-text);
+  border: 2px solid #0a0a0a;
   border-top-color: transparent;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
@@ -402,7 +402,7 @@ body {
 }
 
 .status-message--success {
-  color: var(--gp-btn-text);
+  color: #3cf264;
 }
 
 .status-message--error {
