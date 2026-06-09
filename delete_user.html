@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — GoalPe</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__linear"></div>
+    <div class="page-bg__glow page-bg__glow--top-right"></div>
+    <div class="page-bg__glow page-bg__glow--bottom-left"></div>
+  </div>
+
+  <main class="page">
+    <div class="page-content">
+      <div class="form-card">
+        <div class="form-card__accent" aria-hidden="true"></div>
+
+        <div class="card-logo">
+          <img
+            src="assets/goal_pe_icon.png"
+            alt="GoalPe"
+            class="logo"
+            width="280"
+            height="42"
+            onerror="this.style.display='none'; var fb=this.nextElementSibling; fb.style.display='block'; fb.removeAttribute('aria-hidden');"
+          >
+          <h1 class="logo-fallback" aria-hidden="true">GoalPe</h1>
+        </div>
+
+        <section class="content">
+          <h2 class="title">Delete your account</h2>
+          <span class="title-underline" aria-hidden="true"></span>
+
+          <div class="warning-box" role="alert">
+            <p class="warning-box__text">
+              This action is permanent. Your account and associated data may be deleted and cannot be recovered.
+            </p>
+          </div>
+
+          <form id="delete-form" class="form" novalidate>
+            <div class="field">
+              <label class="field-label" for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              >
+              <p class="field-help">Use the email linked to your account.</p>
+              <p class="field-error" id="email-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="otp">Verification code</label>
+              <input
+                type="text"
+                id="otp"
+                name="otp"
+                class="input input--otp"
+                placeholder="000000"
+                inputmode="numeric"
+                maxlength="6"
+                pattern="[0-9]*"
+                autocomplete="one-time-code"
+                required
+              >
+              <p class="field-help">Enter the 6-digit code sent to your email.</p>
+              <p class="field-error" id="otp-error" role="alert"></p>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">
+              <span class="submit-btn__text">Delete my account</span>
+              <span class="submit-btn__spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+
+          <footer class="card-footer">
+            <a href="mailto:support@goalpe.live" class="card-footer__link">Contact support</a>
+            <span class="card-footer__sep" aria-hidden="true">·</span>
+            <a href="https://goalpe.live/privacy-policy" class="card-footer__link">Privacy policy</a>
+          </footer>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const API = {
+      BASE_URL: 'https://backend.goalpe.live/api/v1',
+
+      async deleteAccount({ email, otp }) {
+        // TODO: replace with real endpoints when available
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        return { success: true };
+      },
+    };
+
+    const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const form = document.getElementById('delete-form');
+    const emailInput = document.getElementById('email');
+    const otpInput = document.getElementById('otp');
+    const emailError = document.getElementById('email-error');
+    const otpError = document.getElementById('otp-error');
+    const submitBtn = document.getElementById('submit-btn');
+    const statusMessage = document.getElementById('status-message');
+
+    function clearFieldError(input, errorEl) {
+      input.classList.remove('input--error');
+      errorEl.textContent = '';
+    }
+
+    function setFieldError(input, errorEl, message) {
+      input.classList.add('input--error');
+      errorEl.textContent = message;
+    }
+
+    function clearStatus() {
+      statusMessage.textContent = '';
+      statusMessage.className = 'status-message';
+    }
+
+    function setStatus(message, type) {
+      statusMessage.textContent = message;
+      statusMessage.className = `status-message status-message--${type}`;
+    }
+
+    function validateEmail(value) {
+      const trimmed = value.trim();
+      if (!trimmed) return 'Email is required';
+      if (!EMAIL_REGEX.test(trimmed)) return 'Please enter a valid email address';
+      return '';
+    }
+
+    function validateOtp(value) {
+      const trimmed = value.trim();
+      if (!trimmed) return 'OTP is required';
+      if (!/^\d{6}$/.test(trimmed)) return 'OTP must be 6 digits';
+      return '';
+    }
+
+    function setLoading(isLoading) {
+      submitBtn.disabled = isLoading;
+      submitBtn.classList.toggle('submit-btn--loading', isLoading);
+    }
+
+    otpInput.addEventListener('input', () => {
+      otpInput.value = otpInput.value.replace(/\D/g, '').slice(0, 6);
+      clearFieldError(otpInput, otpError);
+      clearStatus();
+    });
+
+    emailInput.addEventListener('input', () => {
+      clearFieldError(emailInput, emailError);
+      clearStatus();
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      clearStatus();
+
+      const emailErr = validateEmail(emailInput.value);
+      const otpErr = validateOtp(otpInput.value);
+
+      clearFieldError(emailInput, emailError);
+      clearFieldError(otpInput, otpError);
+
+      if (emailErr) setFieldError(emailInput, emailError, emailErr);
+      if (otpErr) setFieldError(otpInput, otpError, otpErr);
+      if (emailErr || otpErr) return;
+
+      setLoading(true);
+
+      try {
+        const result = await API.deleteAccount({
+          email: emailInput.value.trim(),
+          otp: otpInput.value.trim(),
+        });
+
+        if (result.success) {
+          setStatus('Account deleted successfully.', 'success');
+          form.reset();
+        } else {
+          setStatus(result.message || 'Failed to delete account. Please try again.', 'error');
+        }
+      } catch {
+        setStatus('Failed to delete account. Please try again.', 'error');
+      } finally {
+        setLoading(false);
+      }
+    });
+  </script>
+</body>
+
+</html>
