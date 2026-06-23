@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get GoalPe — Daily Fantasy Football</title>
+    <meta name="description" content="Download GoalPe and play daily fantasy football. Draft your team, compete, and win.">
+    <link rel="icon" type="image/png" href="/assets/images/goalpe-favicon.png">
+    <link rel="stylesheet" href="/styles/deep_link.css">
+</head>
+
+<body>
+    <div class="page-bg" aria-hidden="true">
+        <div class="page-bg__linear"></div>
+        <div class="page-bg__glow"></div>
+    </div>
+
+    <main class="page">
+        <section class="card">
+            <img
+                src="/assets/images/goal_pe_icon.png"
+                alt="GoalPe"
+                class="logo"
+                width="220"
+                height="42"
+            >
+
+            <h1 class="title">Play fantasy football on GoalPe</h1>
+            <p class="subtitle">
+                Draft your 11, beat the competition, and win big. Open the app or download it below.
+            </p>
+
+            <div class="actions">
+                <button type="button" class="btn btn-primary" data-action="open-app">
+                    Open in GoalPe
+                </button>
+                <button type="button" class="btn btn-secondary" data-store="android">
+                    Download for Android
+                </button>
+                <button type="button" class="btn btn-secondary" data-store="ios">
+                    Download for iOS
+                </button>
+            </div>
+
+            <div class="store-badges">
+                <img src="/assets/images/google_play.png" alt="Get it on Google Play" data-store="android">
+                <img src="/assets/images/apple_store.png" alt="Download on the App Store" data-store="ios">
+            </div>
+
+            <p class="hint">
+                Already have the app? <a href="/get" data-action="open-app">Tap here to open GoalPe</a>.
+            </p>
+        </section>
+    </main>
+
+    <script src="/js/deep_link.js"></script>
+    <script>
+        GoalPeDeepLink.initDeepLinkPage({ path: '/get' });
+    </script>
+</body>
+
+</html>
