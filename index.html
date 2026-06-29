@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="icon" type="image/png" href="assets/images/goalpe-favicon.png">
+    <link rel="stylesheet" href="styles/tokens.css" />
     <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="styles/nav_bar.css" />
     <link rel="stylesheet" href="styles/footer.css" />
@@ -17,11 +18,12 @@
         <a href="index.html"><img alt="index_logo" /></a>
         <ul>
             <li>About</li>
-            <li>Whats in the app?</li>
-            <li><a href="legal.html">Terms & Conditions</a></li>
-            <!-- <li>Blog</li> -->
+            <li>Whats in the app</li>
+            <li><a href="legal.html">Terms</a></li>
+            <li><a href="legal.html">Conditions</a></li>
+            <li><a href="#">Blog</a></li>
         </ul>
-        <button type="button">Download Now</button>
+        <button type="button" data-store="auto">Download Now</button>
         <div onclick="handleOpenSideBar()" class="nav-menu">
             <div class="nav-menu-item1"></div>
             <div class="nav-menu-item2"></div>
@@ -30,109 +32,87 @@
         <div id="navigation-side-bar" class="nav-side-bar">
             <ul>
                 <li>About</li>
-                <li>Whats in the app?</li>
-                <li><a href="legal.html">Terms & Conditions</a></li>
-                <!-- <li>Blog</li> -->
+                <li>Whats in the app</li>
+                <li><a href="legal.html">Terms</a></li>
+                <li><a href="legal.html">Conditions</a></li>
+                <li><a href="#">Blog</a></li>
             </ul>
         </div>
         <script src="/js/nav_bar.js"></script>
     </nav>
-    <div class="first-block">
 
-        <div id="first-block-content" class="first-block-layer2">
-            <p class="first-block-label">
-                Play. Compete. Win.<br />Rule the Fantasy FootBall Arena.
-            </p>
-
-            <p class="first-block-base">Build you dream team, join global contests, and climb the<br>leaderboard - all
-                on Goalpe.</p>
+    <section class="hero">
+        <div class="hero__bg" aria-hidden="true">
+            <img class="hero__bg-image" src="/assets/images/hero_bg_desktop.png" alt="" />
+            <div class="hero__gradient"></div>
+            <img class="hero__pitch" src="/assets/images/hero_pitch_overlay.png" alt="" />
+            <img class="hero__watermark" src="/assets/images/hero_watermark.png" alt="" />
+            <img class="hero__ball" src="/assets/images/hero_soccer_ball.png" alt="" />
         </div>
-        <div class="first-block-layer3"></div>
-        <img alt="backgroundpitch" class="first-block-layer5" src="/assets/images/home_background_layer5.png" />
-        <div id="first-block-download-btns" class="first-block-btns">
-            <button type="button">Download for Android</button>
-            <button type="button">Download for IOS</button>
-        </div>
-        <img alt="pitch" class="first-block-layer6" src="/assets/images/football_field.png" />
-        <label class="first-block-layer7">WE WIN WE WIN WE WIN</label>
-        <img class="first-block-layer8" alt="ball" src="/assets/images/home_background_layer_soccer.png" />
-        <img class="first-block-layer9" alt="mobile" src="/assets/images/home_mobile.png" />
-
-        <div class="app-contents">
-            <div class="app-contents-coloum1">
-                <div class="app-contents-items">
-                    <img src="/assets/images/rating_icon.png" alt="rat">
-                    <div>
-                        <label for="rating">4.8</label>
-                        <span>RATINGS</span>
-                    </div>
+        <div class="hero__inner">
+            <div class="hero__content">
+                <p class="hero__eyebrow">FANTASY FOOTBALL • FREE TO PLAY</p>
+                <h1 class="hero__title">
+                    Play. Compete. <span class="hero__title-accent">Win.</span><br />
+                    <span class="hero__title-rest">Rule the </span><span class="hero__title-outline">arena.</span>
+                </h1>
+                <p class="hero__subtitle">Draft your dream team, join leagues, and compete with football fans worldwide.</p>
+                <div class="hero__badge">
+                    <svg class="hero__badge-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <circle cx="8" cy="8" r="7.5" stroke="currentColor"/>
+                        <path d="M5 8L7 10L11 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>100K+ player worldwide</span>
                 </div>
-                <div class="app-contents-items">
-                    <img src="/assets/images/community_icon.png" alt="comm">
-                    <div>
-                        <label for="community">10K+</label>
-                        <span>COMMUNITY</span>
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <img src="/assets/images/download_icon.png" alt="">
+                        <div>
+                            <label>500K+</label>
+                            <span>DOWNLOADS</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="app-contents-coloum2">
-                <div class="app-contents-items">
-                    <img src="/assets/images/download_icon.png" alt="down">
-                    <div>
-                        <label for="downloads">500K+</label>
-                        <span>DOWNLOADS</span>
+                    <div class="hero__stat">
+                        <img src="/assets/images/rating_icon.png" alt="">
+                        <div>
+                            <label>4.8</label>
+                            <span>RATINGS</span>
+                        </div>
                     </div>
-                </div>
-                <div class="app-contents-items">
-                    <img src="/assets/images/language_icon.png" alt="lang">
-                    <div>
-                        <label for="languages">10</label>
-                        <span>LANGUAGES</span>
+                    <div class="hero__stat">
+                        <img src="/assets/images/language_icon.png" alt="">
+                        <div>
+                            <label>10</label>
+                            <span>LANGUAGES</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="app-contents1">
-        <div class="app-contents-items">
-            <img src="/assets/images/rating_icon.png" alt="rat">
-            <div>
-                <label for="rating">4.8</label>
-                <span>RATINGS</span>
+            <div class="hero__visual">
+                <img class="hero__mockups" src="/assets/images/hero_mockups.png" alt="Goalpe app screens" />
+                <div class="store-btns hero__store-btns">
+                    <button type="button" class="store-btn store-btn--play" data-store="android" aria-label="Get it on Google Play">
+                        <svg class="store-btn__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                            <path fill="currentColor" d="M3.6 1.8L13.2 12 3.6 22.2c-.3-.2-.6-.6-.6-1.1V2.9c0-.5.3-.9.6-1.1zm10.8 10.2l2.7-1.5-7.5-4.3 4.8 5.8zm3.3-1.9l2.4 1.4c.7.4.7 1.4 0 1.8l-2.4 1.4-2.9-1.7 2.9-1.7zM14.4 13.8l-4.8 5.8 7.5-4.3-2.7-1.5z"/>
+                        </svg>
+                        <span class="store-btn__text">
+                            <small>GET IT ON</small>
+                            <strong>Google Play</strong>
+                        </span>
+                    </button>
+                    <button type="button" class="store-btn store-btn--apple" data-store="ios" aria-label="Download on the App Store">
+                        <svg class="store-btn__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                            <path fill="currentColor" d="M17.05 12.63c-.03-2.08 1.7-3.08 1.77-3.13-1-.14-1.95.58-2.46.58-.52 0-1.3-.56-2.14-.55-1.1.02-2.12.64-2.69 1.63-1.15 1.99-.29 4.93.82 6.55.55.79 1.2 1.68 2.06 1.65.83-.03 1.14-.54 2.14-.54 1 0 1.27.54 2.14.52 1.24-.02 2.03-.8 2.57-1.59.81-1.18 1.14-2.32 1.16-2.38-.03-.01-2.23-.86-2.25-3.4zm-2.12-6.25c.46-.56.77-1.34.69-2.11-.66.03-1.46.44-1.94 1-.43.5-.8 1.3-.7 2.07.74.06 1.5-.38 1.95-.96z"/>
+                        </svg>
+                        <span class="store-btn__text">
+                            <small>Download on the</small>
+                            <strong>App Store</strong>
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="app-contents-items">
-            <img src="/assets/images/download_icon.png" alt="down">
-            <div>
-                <label for="downloads">10K+</label>
-                <span>DOWNLOADS</span>
-            </div>
-        </div>
-        <div class="app-contents-items">
-            <img src="/assets/images/community_icon.png" alt="comm">
-            <div>
-                <label for="community">188K+</label>
-                <span>COMMUNITY</span>
-            </div>
-        </div>
-        
-        <div class="app-contents-items">
-            <img src="/assets/images/language_icon.png" alt="lang">
-            <div>
-                <label for="languages">10</label>
-                <span>LANGUAGES</span>
-            </div>
-        </div>
-        <div class="app-contents-items">
-            <img src="/assets/images/countries_icon.png" alt="countries">
-            <div>
-                <label for="countries">170+</label>
-                <span>COUNTRIES</span>
-            </div>
-        </div>
-    </div>
-    </div>
+    </section>
     <div class="scroll-block1-background">
         <div class="scroll-block1">
             <div class="scroll-content1">
@@ -521,9 +501,9 @@
             <span>Everything you love about football, gamified.</span>
         </div>
 
-        <div class="fourth-block-body"">
+        <div class="fourth-block-body">
             <div>
-                <label for=" head-card">Create your fantasy teams</label>
+                <label for="head-card">Create your fantasy teams</label>
             <span>Choose real players, form your dream lineup.</span>
         </div>
         <div>
@@ -556,9 +536,25 @@
                     phone.
                 </p>
             </div>
-            <div class="footer-btns">
-                <button type="button">Download for Android</button>
-                <button type="button">Download for IOS</button>
+            <div class="store-btns footer-store-btns">
+                <button type="button" class="store-btn store-btn--play" data-store="android" aria-label="Get it on Google Play">
+                    <svg class="store-btn__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                        <path fill="currentColor" d="M3.6 1.8L13.2 12 3.6 22.2c-.3-.2-.6-.6-.6-1.1V2.9c0-.5.3-.9.6-1.1zm10.8 10.2l2.7-1.5-7.5-4.3 4.8 5.8zm3.3-1.9l2.4 1.4c.7.4.7 1.4 0 1.8l-2.4 1.4-2.9-1.7 2.9-1.7zM14.4 13.8l-4.8 5.8 7.5-4.3-2.7-1.5z"/>
+                    </svg>
+                    <span class="store-btn__text">
+                        <small>GET IT ON</small>
+                        <strong>Google Play</strong>
+                    </span>
+                </button>
+                <button type="button" class="store-btn store-btn--apple" data-store="ios" aria-label="Download on the App Store">
+                    <svg class="store-btn__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                        <path fill="currentColor" d="M17.05 12.63c-.03-2.08 1.7-3.08 1.77-3.13-1-.14-1.95.58-2.46.58-.52 0-1.3-.56-2.14-.55-1.1.02-2.12.64-2.69 1.63-1.15 1.99-.29 4.93.82 6.55.55.79 1.2 1.68 2.06 1.65.83-.03 1.14-.54 2.14-.54 1 0 1.27.54 2.14.52 1.24-.02 2.03-.8 2.57-1.59.81-1.18 1.14-2.32 1.16-2.38-.03-.01-2.23-.86-2.25-3.4zm-2.12-6.25c.46-.56.77-1.34.69-2.11-.66.03-1.46.44-1.94 1-.43.5-.8 1.3-.7 2.07.74.06 1.5-.38 1.95-.96z"/>
+                    </svg>
+                    <span class="store-btn__text">
+                        <small>Download on the</small>
+                        <strong>App Store</strong>
+                    </span>
+                </button>
             </div>
         </div>
         <img src="/assets/images/goal_pe_logo2.png" alt="footerimg">
@@ -569,10 +565,6 @@
                 <li><a href="/legal.html">Terms & Conditions</a></li>
                 <li>Whats in the app?</li>
             </ul>
-            <div class="stores">
-                <img src="/assets/images/google_play.png" alt="google-play">
-                <img src="/assets/images/apple_store.png" alt="apple_store">
-            </div>
             <div class="app-icons1">
                 <label for="forfooter">
                     Build for fans.<br />Powered by passion.
@@ -601,10 +593,6 @@
                 <a href="https://x.com/GoalPe_x" target="_blank"><img src="/assets/images/x_icon.png" alt="x" /></a>
             </div>
 
-            <div class="stores">
-                <img src="/assets/images/google_play.png" alt="google-play">
-                <img src="/assets/images/apple_store.png" alt="apple_store">
-            </div>
         </div>
 
         <div class="footer-meta">

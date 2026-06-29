@@ -86,7 +86,7 @@ body {
 
 .bodyMain > label{
     font-family: "arupala_bold_ita";
-    color: #E4F23C;
+    color: var(--color-accent);
     font-size: 32px;
 }
 

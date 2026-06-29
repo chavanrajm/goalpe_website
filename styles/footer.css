@@ -1,4 +1,9 @@
 @font-face {
+    font-family: "arupala_bold";
+    src: url("/assets/fonts/arupala_grotesk_trail/ArupalaGroteskTrial-Bold.ttf");
+}
+
+@font-face {
     font-family: "arupala_boldita";
     src: url("/assets/fonts/arupala_grotesk_trail/arupala_grotesk_trial_bold_italic.ttf");
 }
@@ -11,6 +16,60 @@
 @font-face {
     font-family: "hoves_reg";
     src: url("/assets/fonts/tt_hoves/tt_hoves_pro_trial_regular.ttf");
+}
+
+.store-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: "arupala_bold";
+    border: none;
+    min-width: 180px;
+}
+
+.store-btn__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.store-btn__text small {
+    font-size: 9px;
+    font-family: "hoves_reg";
+    letter-spacing: 0.5px;
+}
+
+.store-btn__text strong {
+    font-size: 16px;
+    font-family: "arupala_bold";
+}
+
+.store-btn--play {
+    background-color: var(--color-btn-dark);
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+.store-btn--apple {
+    background-color: var(--color-accent);
+    color: var(--color-btn-dark);
+}
+
+.store-btn__icon {
+    flex-shrink: 0;
 }
 
 footer {
@@ -48,7 +107,7 @@ footer {
 
         & label {
             font-size: 40px;
-            color: #E4F23C;
+            color: var(--color-accent);
         }
 
         & p {
@@ -57,28 +116,12 @@ footer {
         }
     }
 
-    & .footer-btns{
+    & .footer-store-btns {
         display: flex;
         flex-direction: column;
-        row-gap: 32px;
+        row-gap: 16px;
         height: fit-content;
         width: fit-content;
-
-        & button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 44px;
-            width: 358px;
-            border-radius: 20px;
-            outline: none;
-            border: none;
-            background-color: #BDC830;
-            color: #131312;
-            font-family: "arupala_bold";
-            font-size: 14px;
-            cursor: pointer;
-        }
     }
 }
 
@@ -256,11 +299,12 @@ footer {
 }
 
 @media (max-width: 910px){
-    .footer-btns{
+    .footer-store-btns {
         margin-top: 0;
-        & > button{
-            width: 270px !important;
-        }
+    }
+
+    .footer-store-btns .store-btn {
+        min-width: 240px;
     }
 
      .footer-header-content {
@@ -295,15 +339,17 @@ footer {
             font-size: 20px !important;
         }
     }
-    .footer-btns{
+    .footer-store-btns {
         flex-direction: row !important;
         justify-content: space-between !important;
         width: 100% !important;
         margin-top: 32px;
         gap: 12px;
-        & > button{
-            width: 50% !important;
-        }
+    }
+
+    .footer-store-btns .store-btn {
+        flex: 1;
+        min-width: 0;
     }
 }
 
@@ -331,11 +377,12 @@ footer {
 }
 
 @media (max-width: 514px) {
-    .footer-btns{
+    .footer-store-btns {
         flex-direction: column !important;
-        & > button{
-            width: max(358px, 100%)!important;
-        }
+    }
+
+    .footer-store-btns .store-btn {
+        width: 100%;
     }
 }
 
@@ -348,10 +395,11 @@ footer {
 }
 
 @media (max-width: 390px){
-    .footer-btns{
+    .footer-store-btns {
         flex-direction: column !important;
-        & > button{
-            width: 100%!important;
-        }
+    }
+
+    .footer-store-btns .store-btn {
+        width: 100%;
     }
 }

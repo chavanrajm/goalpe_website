@@ -717,7 +717,7 @@ function init() {
             tabsChildren[2].style.color = '#797979';
              tabsChildren[1].style.backgroundColor = "transparent";
             tabsChildren[1].style.color = '#797979';
-            tabsChildren[0].style.backgroundColor = "#E4F23C";
+            tabsChildren[0].style.backgroundColor = "#DFFF00";
             tabsChildren[0].style.color = '#191919';
             dataBodyElement.innerHTML = privacyPolicy;
             break;
@@ -727,7 +727,7 @@ function init() {
             tabsChildren[2].style.color = '#797979';
              tabsChildren[0].style.backgroundColor = "transparent";
             tabsChildren[0].style.color = '#797979';
-            tabsChildren[1].style.backgroundColor = "#E4F23C";
+            tabsChildren[1].style.backgroundColor = "#DFFF00";
             tabsChildren[1].style.color = '#191919';
             dataBodyElement.innerHTML = termsAndConditions;
             break;
@@ -737,7 +737,7 @@ function init() {
             tabsChildren[1].style.color = '#797979';
              tabsChildren[0].style.backgroundColor = "transparent";
             tabsChildren[0].style.color = '#797979';
-            tabsChildren[2].style.backgroundColor = "#E4F23C";
+            tabsChildren[2].style.backgroundColor = "#DFFF00";
             tabsChildren[2].style.color = '#191919';
             dataBodyElement.innerHTML = helpAndSupport;
             break;

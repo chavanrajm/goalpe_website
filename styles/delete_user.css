@@ -17,7 +17,7 @@
     --gp-bg: #0a0a0a;
     --gp-auth-base: #161802;
     --gp-surface: #1d1d1d;
-    --gp-primary: #e4f23c;
+    --gp-primary: #DFFF00;
     --gp-text: #f2f2f2;
     --gp-text-light: #f9f9f9;
     --gp-text-muted: #7f7f7f;
@@ -27,7 +27,7 @@
     --gp-disabled-bg: #747474;
     --gp-disabled-text: #131312;
     --gp-cursor: #f2f99f;
-    --gp-btn-bg: #e4f23c;
+    --gp-btn-bg: #DFFF00;
     --gp-btn-border: transparent;
     --gp-btn-text: #000000;
     --gp-input-radius: 10px;
@@ -97,7 +97,7 @@ body {
     height: 55%;
     background: radial-gradient(
         ellipse at top right,
-        rgba(228, 242, 60, 0.22) 0%,
+        rgba(223, 255, 0, 0.22) 0%,
         transparent 68%
     );
 }
@@ -109,7 +109,7 @@ body {
     height: 55%;
     background: radial-gradient(
         ellipse at bottom left,
-        rgba(228, 242, 60, 0.18) 0%,
+        rgba(223, 255, 0, 0.18) 0%,
         transparent 68%
     );
 }
@@ -141,7 +141,7 @@ body {
     height: 3px;
     background: linear-gradient(90deg,
         #3cf264 0%,
-        #e4f23c 50%,
+        #DFFF00 50%,
         #f2f99f 100%);
 }
 
